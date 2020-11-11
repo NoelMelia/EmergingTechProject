@@ -24,3 +24,8 @@
 ### 25% Development
 ### 25% Consistency
 ### 25% Documentation
+
+
+## Describe Flask in Detail?
+
+## How the Project Works?

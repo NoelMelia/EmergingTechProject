@@ -1,6 +1,6 @@
 # Emerging Project 2020
 
-## Steps
+## Breakdown Steps
 ### 1: Create a Web Service that uses machine learning to make pre-dictions based on the data set (powerproduction)
 
 ### 2: Some of the Above

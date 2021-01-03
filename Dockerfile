@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.7
 
 WORKDIR /usr/src/app
 
@@ -10,4 +10,5 @@ COPY . .
 
 ENV FLASK_APP=web-service.py
 
-CMD python -m flask run 
+CMD python -m flask run
+

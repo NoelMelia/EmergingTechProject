@@ -6,6 +6,7 @@ import tensorflow as tf
 # Create a new web app.
 app = fl.Flask(__name__)
 
+
 # Add root route.
 @app.route("/", methods=['GET'])
 def home():
@@ -25,3 +26,5 @@ def wind():
 
 if __name__ =='__main__':
     app.run(debug=True,port=5003)
+
+    # https://neptune.ai/blog/how-to-serve-machine-learning-models-with-tensorflow-serving-and-docker

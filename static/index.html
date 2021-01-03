@@ -107,11 +107,11 @@
             // 'Content-Type': 'application/x-www-form-urlencoded',
           },
           body: JSON.stringify({value}) // body data type must match "Content-Type" header
-        });
+		});
 
         var resp = await response.json(); // parses JSON response into native JavaScript objects
         document.getElementById("output").innerHTML=resp.predict[0]
-        console.log(resp)
+        
       }
       document.getElementById("submit-btn").addEventListener("click",postData);
     </script>

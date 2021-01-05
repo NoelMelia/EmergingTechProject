@@ -90,9 +90,8 @@
       </div>
       
     </form>
-    <img src="../poly.jpg" alt="Model" 
-					style="width:500px;height:600px;">
-     
+	
+    <img src="/Linear.jpg"> 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -100,6 +99,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script>
       async function postData(e) {
+        // Default options are marked with *
+        e.preventDefault();
+        const value = document.getElementById('speed').value
+        const response = await fetch('/windpower', {
+          method: 'POST', // *GET, POST, PUT, DELETE, etc.
+          headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: JSON.stringify({value}) // body data type must match "Content-Type" header
+		});
+
+        var resp = await response.json(); // parses JSON response into native JavaScript objects
+        document.getElementById("output").innerHTML=resp.predict[0]
+        
+      }
+	  async function postImage(e) {
         // Default options are marked with *
         e.preventDefault();
         const value = document.getElementById('speed').value

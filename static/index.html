@@ -84,14 +84,16 @@
         <input type="text" placeholder="Enter Wind" id="speed" required>
 
         <button id='submit-btn'class="registerbtn">Process</button>
-        <p >Prediction: </p>
-		<p id='output' ></p>
-        
+		
+		
+
+        Prediction: <b><span style="font-weight:bold;" id='output'></span></b>
       </div>
       
     </form>
 	
-    <img src="/Linear.jpg"> 
+	
+    
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -101,7 +103,9 @@
       async function postData(e) {
         // Default options are marked with *
         e.preventDefault();
+		// Get the Value that user inputs
         const value = document.getElementById('speed').value
+		// Fetch the Windpower Method from the Python File
         const response = await fetch('/windpower', {
           method: 'POST', // *GET, POST, PUT, DELETE, etc.
           headers: {
@@ -110,28 +114,11 @@
           },
           body: JSON.stringify({value}) // body data type must match "Content-Type" header
 		});
-
+		
         var resp = await response.json(); // parses JSON response into native JavaScript objects
-        document.getElementById("output").innerHTML=resp.predict[0]
-        
+        document.getElementById("output").innerHTML=resp.predict[0]// Output value of Predictin
       }
-	  async function postImage(e) {
-        // Default options are marked with *
-        e.preventDefault();
-        const value = document.getElementById('speed').value
-        const response = await fetch('/windpower', {
-          method: 'POST', // *GET, POST, PUT, DELETE, etc.
-          headers: {
-            'Content-Type': 'application/json'
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          body: JSON.stringify({value}) // body data type must match "Content-Type" header
-		});
-
-        var resp = await response.json(); // parses JSON response into native JavaScript objects
-        document.getElementById("output").innerHTML=resp.predict[0]
-        
-      }
+	  // Once the Button is clicked then post the prediction from the Above method
       document.getElementById("submit-btn").addEventListener("click",postData);
     </script>
     <!-- Option 2: jQuery, Popper.js, and Bootstrap JS

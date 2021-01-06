@@ -2,7 +2,7 @@
 import flask as fl
 from flask import request
 import tensorflow as tf
-import math
+
 
 
 # Create a new web app.
@@ -35,5 +35,5 @@ def wind():
 if __name__ =='__main__':
   # Run the App on Port 5003
     # app.run(debug=True,port=5003)
-    app.run()
+    app.run(debug=True)
     # https://neptune.ai/blog/how-to-serve-machine-learning-models-with-tensorflow-serving-and-docker

@@ -13,10 +13,9 @@ ENV FLASK_APP="web-service.py"
 
 CMD flask run --host=0.0.0.0
 
-
+# Building the Docker Image and Container
 # docker build . -t model
-# docker run --name model-container -d -p 5001:5001 model
-# docker run --name model-container2 -p 5009:5009 model3
+# docker run --name model-container -p 5000:5000 model
 
 # Running Flask 
 # set FLASK_APP=web-service.py
